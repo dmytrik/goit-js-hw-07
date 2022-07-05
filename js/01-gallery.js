@@ -48,7 +48,6 @@ function escCloseModal(event) {
     instance.close();
     window.removeEventListener("keydown", escCloseModal);
   }
-  console.log(event);
 }
 function clearEvent() {
   window.removeEventListener("keydown", escCloseModal);
