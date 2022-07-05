@@ -9,7 +9,7 @@ const galleryHtml = galleryItems
   })
   .join("");
 gallery.innerHTML = galleryHtml;
-const lightbox = new SimpleLightbox(".gallery a", {
+new SimpleLightbox(".gallery a", {
   captionsData: "alt",
   captionPosition: "bottom",
   captionDelay: 250,

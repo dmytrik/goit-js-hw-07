@@ -26,7 +26,7 @@ gallery.addEventListener("click", showImage);
 
 let url;
 let instance;
-
+let lightbox;
 function showImage(event) {
   const img = event.target.classList.contains("gallery__image");
   if (!img) {
@@ -39,10 +39,18 @@ function showImage(event) {
 
   instance.show();
   window.addEventListener("keydown", escCloseModal);
+  lightbox = document.querySelector(".basicLightbox");
+  lightbox.addEventListener("click", clearEvent);
 }
+
 function escCloseModal(event) {
   if (event.code === "Escape") {
     instance.close();
     window.removeEventListener("keydown", escCloseModal);
   }
+  console.log(event);
+}
+function clearEvent() {
+  window.removeEventListener("keydown", escCloseModal);
+  lightbox.removeEventListener("click", clearEvent);
 }
