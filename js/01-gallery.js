@@ -47,6 +47,7 @@ function escCloseModal(event) {
   if (event.code === "Escape") {
     instance.close();
     window.removeEventListener("keydown", escCloseModal);
+    lightbox.removeEventListener("click", clearEvent);
   }
 }
 function clearEvent() {
